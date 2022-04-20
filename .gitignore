@@ -4,9 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/src/credentials.json
 # testing
 /coverage
+
+.env
 
 # production
 /build
