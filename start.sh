@@ -23,7 +23,8 @@ verify_env(){
 
 initialize_proj(){
   echo "iniciando projeto"
-  yarn start
+  npx install -g yarn
+  yarn && yarn start
 }
 
 clear
