@@ -4,6 +4,7 @@ import {
   getFirebaseCollection,
 } from "../services/firebase/request";
 import { UserProps } from "../services/firebase/types";
+import ListUserMapInside from "./ListUserMapInside";
 import ListUsers from "./ListUsers";
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
 
   const UserListComponent = () => (
     <>
+      <p>Listando passando props separadas</p>
       {useData.map((item) => (
         <ListUsers
           key={item.id}
@@ -46,6 +48,11 @@ const App = () => {
           description={item.description}
         />
       ))}
+
+      <br />
+
+      <p>Listando passando o estado todo</p>
+      <ListUserMapInside useData={useData} />
     </>
   );
 
