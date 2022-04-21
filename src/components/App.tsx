@@ -15,7 +15,7 @@ const App = () => {
       setLoading(true);
       const response = await getFirebaseCollection("users");
       setUserData(response);
-      setLoading(false)
+      setLoading(false);
       return response;
     } catch (e) {
       return e;
@@ -37,20 +37,22 @@ const App = () => {
   const LoadingComponent = () => <p>Carregando ...</p>;
 
   const UserListComponent = () => (
-      <>
-        {useData.map((item) => (
-          <ListUsers
-            age={item.age}
-            name={item.name}
-            description={item.description}
-          />
-        ))}
-      </>
+    <>
+      {useData.map((item) => (
+        <ListUsers
+          key={item.id}
+          age={item.age}
+          name={item.name}
+          description={item.description}
+        />
+      ))}
+    </>
   );
 
   return (
     <div>
       <h1>React</h1>
+
       <button onClick={() => handleAddUser()}>Enviar</button>
       <button onClick={() => handleGetUserCollection()}>Atualizar</button>
 
